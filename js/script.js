@@ -14,59 +14,82 @@ const hard = document.getElementById("cont-hard");
 const livEasy = document.getElementById("easy");
 const livMedium = document.getElementById("medium");
 const livHard = document.getElementById("hard");
-let liv = 1;
-console.log("livello attuale " + liv);
-
+//cambio della schermata in base al livello
+//livello easy
 livEasy.addEventListener("click",
     function(){
-        liv = 1
-        console.log("livello attuale " + liv);
         easy.classList.add("levelSelected")
         easy.classList.remove("levelNull")
+        medium.classList.remove("levelSelected")
+        medium.classList.add("levelNull")
+        hard.classList.remove("levelSelected")
+        hard.classList.add("levelNull") 
     }
 );
-
+//livello medium
 livMedium.addEventListener("click",
     function(){
-        liv = 2
-        console.log("livello attuale " + liv);
         medium.classList.add("levelSelected")
         medium.classList.remove("levelNull")
+        hard.classList.remove("levelSelected")
+        hard.classList.add("levelNull")
+        easy.classList.remove("levelSelected")
+        easy.classList.add("levelNull") 
     }
 );
-
+//livello hard
 livHard.addEventListener("click",
     function(){
-        liv = 3
-        console.log("livello attuale " + liv);
         hard.classList.add("levelSelected")
         hard.classList.remove("levelNull")
+        medium.classList.remove("levelSelected")
+        medium.classList.add("levelNull")
+        easy.classList.remove("levelSelected")
+        easy.classList.add("levelNull")
     }
 );
 
-
-if(liv = 1){//generazione celle nel container EASY
-    for(let i = 1; i <= 100; i ++){
-        let cellOut = cellgenerator();
+//generazione celle nel container EASY
+for(let i = 1; i <= 100; i++){
+    let cellOut = cellgenerator();
+    easy.append(cellOut);
+    //selezionamento celle
+    cellOut.addEventListener("click",   
+    function(){
+        cellOut.classList.add("clicked");
+        console.log(cellOut);
+        cellOut.append(i)
+        }
+    )
+};
+        
+//generazione celle nel container MEDIUM
+for(let i = 1; i <= 81; i++){
+    let cellOut = cellgenerator();
+    medium.append(cellOut);
+    //selezionamento celle
+    cellOut.addEventListener("click",
+    function(){
+        cellOut.classList.add("clicked");
+        console.log(cellOut);
         cellOut.append(i);
-        easy.append(cellOut);
-    }
-}else if(liv = 2){//generazione celle nel container MEDIUM
-    for(let a = 0; a < 81; a ++){
-        let cellOut = cellgenerator();
-        cellOut.append(a);
-        easy.append(cellOut);
-    }
-}else if(liv = 3){//generazione celle nel container HARD
-    for(let b = 0; b < 49; b ++){
-        let cellOut = cellgenerator();
-        cellOut.append(b);
-        easy.append(cellOut);
-    }
-}
+        }
+    )
+};
 
-
-
+//generazione celle nel container HARD
+for(let i = 1; i <= 49; i++){
+    let cellOut = cellgenerator();
+    hard.append(cellOut);
+    //selezionamento celle
+    cellOut.addEventListener("click",
+        function(){
+        cellOut.classList.add("clicked");
+        console.log(cellOut);
+        cellOut.append(i);
+        }   
+    )
+};
 
 
 

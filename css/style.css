@@ -87,6 +87,8 @@
 
 .cell.clicked{
     background-color: blue;
-    border: 3px  solid black;
 }
 
+.cell:hover{
+    cursor: pointer;
+}
