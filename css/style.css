@@ -32,7 +32,7 @@
     background-color: limegreen;
     display: flex;
     flex-wrap: wrap;
-    /* display: none; */
+    display: none;
 }
 
 #cont-medium{
@@ -55,14 +55,38 @@
     display: none;
 }
 
-/* celle di gioco */
-.cell{
+#cont-easy .cell {
     height: calc(100% / 10);
     width: calc(100% / 10);
+}
+
+#cont-medium .cell {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+#cont-hard .cell {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
+.levelSelected{
+    display: flex !important;
+}
+.levelNull{
+    display: none !important;
+}
+/* celle di gioco */
+.cell{
     background-color: black;
+    border: 3px  solid white;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .cell.clicked{
     background-color: blue;
     border: 3px  solid black;
 }
+
