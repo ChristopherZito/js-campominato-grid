@@ -1,5 +1,68 @@
+/* generali */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.container{
+    background-color: rgb(59, 0, 69);
+    height: 100vh;
+}
+
+#difficulty{
+    width: 15%;
+    margin: auto;
+    background-color: grey;
+    border-radius: 15px;
+}
+.btn{
+    background-color: lime;
+    padding: 4px 5px;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+/* container livelli */
+#cont-easy{
+    width: 90%;
+    height: 80vh;
+    margin: 10px auto;
+    background-color: limegreen;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: none; */
+}
+
+#cont-medium{
+    width: 75%;
+    height: 80vh;
+    margin: 10px auto;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+}
+
+#cont-hard{
+    width: 60%;
+    height: 80vh;
+    margin: 10px auto;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+}
+
+/* celle di gioco */
+.cell{
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+    background-color: black;
+}
+
+.cell.clicked{
+    background-color: blue;
+    border: 3px  solid black;
 }
