@@ -9,6 +9,7 @@
 .container{
     background-color: rgb(59, 0, 69);
     height: 100vh;
+    padding-top: 20px;
 }
 
 #difficulty{
@@ -56,17 +57,14 @@
 }
 
 #cont-easy .cell {
-    height: calc(100% / 10);
     width: calc(100% / 10);
 }
 
 #cont-medium .cell {
-    height: calc(100% / 9);
     width: calc(100% / 9);
 }
 
 #cont-hard .cell {
-    height: calc(100% / 7);
     width: calc(100% / 7);
 }
 
@@ -80,13 +78,14 @@
 .cell{
     background-color: black;
     border: 3px  solid white;
-    color: white;
     text-align: center;
     padding-top: 20px;
+    color: transparent;
 }
 
 .cell.clicked{
     background-color: blue;
+    color: white;
 }
 
 .cell:hover{

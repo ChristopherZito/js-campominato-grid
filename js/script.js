@@ -10,10 +10,12 @@
 const easy = document.getElementById("cont-easy");
 const medium = document.getElementById("cont-medium");
 const hard = document.getElementById("cont-hard");
-//scelta livello
+
+//input livelli
 const livEasy = document.getElementById("easy");
 const livMedium = document.getElementById("medium");
 const livHard = document.getElementById("hard");
+
 //cambio della schermata in base al livello
 //livello easy
 livEasy.addEventListener("click",
@@ -53,42 +55,21 @@ livHard.addEventListener("click",
 for(let i = 1; i <= 100; i++){
     let cellOut = cellgenerator();
     easy.append(cellOut);
-    //selezionamento celle
-    cellOut.addEventListener("click",   
-    function(){
-        cellOut.classList.add("clicked");
-        console.log(cellOut);
-        cellOut.append(i)
-        }
-    )
+    cellOut.append(i)
 };
         
 //generazione celle nel container MEDIUM
 for(let i = 1; i <= 81; i++){
     let cellOut = cellgenerator();
     medium.append(cellOut);
-    //selezionamento celle
-    cellOut.addEventListener("click",
-    function(){
-        cellOut.classList.add("clicked");
-        console.log(cellOut);
-        cellOut.append(i);
-        }
-    )
+    cellOut.append(i); 
 };
 
 //generazione celle nel container HARD
 for(let i = 1; i <= 49; i++){
     let cellOut = cellgenerator();
     hard.append(cellOut);
-    //selezionamento celle
-    cellOut.addEventListener("click",
-        function(){
-        cellOut.classList.add("clicked");
-        console.log(cellOut);
-        cellOut.append(i);
-        }   
-    )
+    cellOut.append(i); 
 };
 
 
@@ -98,5 +79,12 @@ for(let i = 1; i <= 49; i++){
 function cellgenerator(){
     let cell = document.createElement("div")
     cell.classList.add("cell")
+    //selezionamento celle
+    cell.addEventListener("click",
+    function(){
+        cell.classList.add("clicked");
+        }
+    )
     return cell;
 }
+
